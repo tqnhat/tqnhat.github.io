@@ -93,6 +93,7 @@ function stopGame(){
     document.getElementById("bPlayGame").disabled = false;
 }
 
+/* add . to number */
 function numberWithCommas(x) {
     return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 }
