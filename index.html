@@ -1,1 +1,146 @@
-Hello World
+<html lang="en">
+    <head>
+        <title>Count with Tool</title>
+        <script src="./script.js"></script>
+        <meta name="viewport" content="width=device-width, initial-scale=1"></meta>
+        <style type="text/css">
+            body {
+               background-color: #fff;
+               background-image: url('footer2.jpg');
+               background-position-y: -50px;
+               background-position: bottom;
+               background-size: 70%;
+               background-repeat: no-repeat;
+               font-family: FredokaOne;
+            }
+            @font-face{
+                font-family: FredokaOne;
+                src: url('FredokaOne-Regular.ttf');
+            }
+            .content{
+                max-width: 960px;
+                display: flex;
+                padding: 1em;
+                box-sizing: content-box;
+                border: 2px solid burlywood;
+                background-color: #04b90140;
+                border-radius: 20px;
+                justify-content: center;
+                margin: auto;
+                flex-direction: column;
+                margin-top: 2em;
+            }
+            .centerContent{
+                display: flex;
+                justify-content: center;
+                
+            }
+            .flexCenter{
+                display: flex;
+                align-items:center;
+                justify-content: center;
+            }
+            .flexRow {                
+                flex-flow: row;
+            }
+
+            .flexColumn {
+                flex-flow: column;
+            }
+
+            .mTop {
+                margin-top: 1em;
+            }
+            .hText{
+                text-align: center;
+                border: 1px solid;
+            }
+            .textMargin{
+                margin: 10px 0;
+            }
+            .button{                
+                border: 2px solid burlywood;
+                font-family: FredokaOne;
+                padding: 8px 22px;
+                background-color: #ebbd18;
+                text-decoration: none;
+                margin: 4px 2px;
+                cursor: pointer;
+                font-size: 20px;
+                border-radius: 5px;
+            }
+            .button:hover {
+                background-color: #d6ab10 !important;
+            }
+            .mB1{
+                margin-bottom: 1em;
+            }
+            
+            .mR1{
+                margin-right: 2em;
+            }
+            .p_control{
+                margin: 6px 0 ;
+            }
+            .pR2{
+                padding-right: 2em;
+            }
+            .pR1{
+                padding-right: 1em;
+            }
+            .pL1{
+                padding-left: 1em;
+            }
+            .bText{
+                font-size: 60px;
+            }
+            .maxInput{
+                max-width: 100px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="content">
+            <!--number & text-->
+            <div id="dNumText" class="flexCenter flexColumn mB2">
+                <h1 id="tNumber" class="tNumber bText textMargin">Number</h1>
+                <h3 id="tText" class="tText textMargin mB1">Text</h2>
+            </div>
+            
+            <!--control-->
+            <div id="dControls" class="mTop  mB1">
+                <div class="mB1 flexCenter">
+                    <label class="pR1">From</label>
+                    <input type="number" id="nRange1" value="1" class="maxInput pR1"/>
+                    <label class="pL1 pR1">to</label>
+                    <input type="number" id="nRange2" value="99" class="maxInput pR1"/>
+                    <label>(max 9)</label>
+                </div>
+                <div class="flexCenter flexRow mB1">
+                    <div class="mR1">
+                      <p class="p_control">Speed (second)</p>
+                      <input type="range" min="1" max="15" value="5" step="1" id="speed" />
+                      <span id="speed_label" class="mR1">5</span>
+                    </div>
+                    <div class="mR1">
+                      <p class="p_control">Practice Time (minute)</p>
+                      <input type="range" min="1" max="10" value="1" id="time" step="1" />
+                      <span id="time_label" class="mR1">1</span>
+                    </div>
+                </div>
+                <div class="flexCenter flexRow mB1">
+                    <input type="radio" id="type1" name="type" checked="checked" value="1">
+                    <label class="mR1" for="type1">Simple</label><br>
+                    <input type="radio" id="type2" name="type" value="2">
+                    <label for="type2">Advance</label><br> 
+                </div>
+            </div>
+
+            
+            <!--buttons-->
+            <div id="dButton" class="centerContent">
+                <input id="bPlayGame" class="button" type="button" value="Play" onclick="playGame();">
+            </div>
+        </div>
+    </body>
+</html>
