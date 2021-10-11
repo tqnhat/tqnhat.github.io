@@ -93,16 +93,24 @@ function stopGame(){
     document.getElementById("bPlayGame").disabled = false;
 }
 
+function numberWithCommas(x) {
+    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+}
+
 function generateNumber(){
     var rdnNum = getRandomInRange(nRange1, nRange2);
+    var textNum;
     var sNum;
     if(isSimple){
         sNum = simpleInWord(rdnNum);
+        document.getElementById("tNumber").innerHTML = rdnNum + "";
     }else{
+        textNum = numberWithCommas(rdnNum);
+        document.getElementById("tNumber").innerHTML = textNum;
         sNum = toWords(rdnNum);
     }
 
-    document.getElementById("tNumber").innerHTML = rdnNum + "";
+
     document.getElementById("tText").innerHTML = sNum +  "";
 }
 
