@@ -21,6 +21,7 @@ let speedInterval;
 window.onload = function() {
     var rSpeed = document.getElementById("speed");
     var spLabel = document.getElementById("speed_label");
+    var cbHideText = document.getElementById("shText");
 
     rSpeed.addEventListener("input", function() {
         nSpeed  = rSpeed.value;
@@ -40,6 +41,14 @@ window.onload = function() {
         nTime = rTime.value;
         stLabel.innerHTML = nTime;
     }, false); 
+
+    cbHideText.addEventListener('click', function(){
+        if(cbHideText.checked){
+            document.getElementById("tText").style.display = "none";
+        }else{
+            document.getElementById("tText").style.display = "block";
+        }
+    }, false)
   };  
 
 function setRange(){

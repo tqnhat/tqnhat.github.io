@@ -9,7 +9,7 @@
                background-image: url('footer2.jpg');
                background-position-y: -50px;
                background-position: bottom;
-               background-size: 70%;
+               background-size: 60%;
                background-repeat: no-repeat;
                font-family: FredokaOne;
             }
@@ -17,8 +17,22 @@
                 font-family: FredokaOne;
                 src: url('FredokaOne-Regular.ttf');
             }
+            @media only screen and (max-width: 450px){
+                .bg_img_size{
+                    background-size: 96% !important;
+                }
+                .hide_img{
+                    display: none;
+                }
+                .bText{
+                    font-size: 60px !important;
+                }
+                .tText{
+                    font-size: 16px !important;
+                }
+            }
             .content{
-                max-width: 960px;
+                max-width: 640px;
                 display: flex;
                 padding: 1em;
                 box-sizing: content-box;
@@ -73,11 +87,11 @@
                 background-color: #d6ab10 !important;
             }
             .mB1{
-                margin-bottom: 1em;
+                margin-bottom: 0.5em;
             }
             
             .mR1{
-                margin-right: 2em;
+                margin-right: 1em;
             }
             .p_control{
                 margin: 6px 0 ;
@@ -92,14 +106,29 @@
                 padding-left: 1em;
             }
             .bText{
-                font-size: 60px;
+                font-size: 80px;
+            }
+            .tText{
+                font-size: 20px;
             }
             .maxInput{
                 max-width: 100px;
             }
+            .img_left{
+                position: absolute;
+                width: 10%;
+                left: 0;
+            }
+            .img_right{
+                position: absolute;
+                width: 10%;
+                right: 0;
+            }
         </style>
     </head>
-    <body>
+    <body class="bg_img_size">
+        <img src="friends_in_col.png" class="img_left hide_img" alt="friend">
+        <img src="friends_in_col.png" class="img_right hide_img" alt="friend">
         <div class="content">
             <!--number & text-->
             <div id="dNumText" class="flexCenter flexColumn mB2">
@@ -114,7 +143,7 @@
                     <input type="number" lang="en-150" id="nRange1" value="1" class="maxInput pR1"/>
                     <label class="pL1 pR1">to</label>
                     <input type="number" lang="en-150" id="nRange2" value="99" class="maxInput pR1"/>
-                    <label>(max 9)</label>
+                    <label>(9)</label>
                 </div>
                 <div class="flexCenter flexRow mB1">
                     <div class="mR1">
@@ -132,7 +161,9 @@
                     <input type="radio" id="type1" name="type" checked="checked" value="1">
                     <label class="mR1" for="type1">Simple</label><br>
                     <input type="radio" id="type2" name="type" value="2">
-                    <label for="type2">Advance</label><br> 
+                    <label for="type2" class="mR1" >Advance</label><br> 
+                    <input type="checkbox" id="shText" name="ShowText" value="1">
+                    <label for="ShowText">Hide Text</label>
                 </div>
             </div>
 
